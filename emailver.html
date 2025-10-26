@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Email Verification</title>
     <style>
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(to right, #00c6ff, #0072ff);
+        background: linear-gradient(to right, #6a11cb, #2575fc);
         color: #333;
         margin: 0;
         padding: 0;
@@ -28,8 +28,8 @@
         animation: fadeIn 1s ease;
       }
 
-      h1 {
-        color: #0072ff;
+      h2 {
+        color: #4a90e2;
         font-size: 32px;
         margin-bottom: 25px;
         font-weight: bold;
@@ -56,13 +56,13 @@
       }
 
       input:focus {
-        border-color: #0072ff;
+        border-color: #4a90e2;
         outline: none;
       }
 
       button {
         width: 100%;
-        background-color: #0072ff;
+        background-color: #4a90e2;
         color: white;
         padding: 14px;
         border: none;
@@ -74,7 +74,7 @@
       }
 
       button:hover {
-        background-color: #005bb5;
+        background-color: #357abd;
       }
 
       #loading {
@@ -84,16 +84,14 @@
         color: #666;
       }
 
-      #error-message,
-      #otp-error-message {
+      #error-message, #otp-error-message {
         color: red;
+        margin-top: 15px;
         font-size: 14px;
-        margin-top: 10px;
       }
 
       #otp-section {
         display: none;
-        margin-top: 20px;
       }
 
       @keyframes fadeIn {
@@ -104,27 +102,33 @@
           opacity: 1;
         }
       }
+
+      .hidden {
+        display: none;
+      }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <div class="container">
-      <h1>Email Verification</h1>
-      <form id="email-form">
-        <label for="email">Enter your Email:</label>
-        <input type="email" id="email" required />
-        <button type="submit">Send OTP</button>
+        <h2>Email Verification</h2>
+        
+        <form id="email-form">
+            <label for="email">Enter your Email:</label>
+            <input type="email" id="email" required>
+            <button type="submit">Send OTP</button>
+        </form>
+
         <div id="loading">Sending...</div>
+
         <div id="error-message"></div>
-      </form>
 
-      <div id="otp-section">
-        <label for="otp">Enter OTP:</label>
-        <input type="text" id="otp" required />
-        <button id="verify-otp">Verify OTP</button>
-        <div id="otp-error-message"></div>
-      </div>
+        <div id="otp-section">
+            <label for="otp">Enter OTP:</label>
+            <input type="number" id="otp" required>
+            <button type="button" id="verify-otp">Verify OTP</button>
+            <div id="otp-error-message"></div>
+        </div>
     </div>
-
     <script src="otpver.js"></script>
-  </body>
+</body>
 </html>
